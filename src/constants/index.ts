@@ -1,20 +1,25 @@
 /**
- * 本地后端地址
+ * 本地后端地址（开发环境）
  */
-// export const BACKEND_HOST_LOCAL = 'http://localhost:8123';
-export const BACKEND_HOST_LOCAL = 'https://api.yucoder.cn';
+export const BACKEND_HOST_LOCAL = '';
 
 /**
- * 线上后端地址
+ * 线上后端地址（生产环境 - 使用相对路径）
  */
-export const BACKEND_HOST_PROD = 'https://api.yucoder.cn';
+export const BACKEND_HOST_PROD = '';
 
 /**
  * 验证码地址
  */
-export const BACKEND_HOST_CODE = BACKEND_HOST_LOCAL + '/api';
-export const BACKEND_HOST_WS = 'wss://api.yucoder.cn/ws/?token=';
-// export const BACKEND_HOST_WS = 'ws://127.0.0.1:8090?token=';
+export const BACKEND_HOST_CODE = '/api';
+
+/**
+ * WebSocket 地址（动态获取）
+ */
+export const BACKEND_HOST_WS = 
+  (typeof window !== 'undefined' 
+    ? ((window.location.protocol === 'https:' ? 'wss://' : 'ws://') + window.location.host + '/ws/?token=')
+    : 'ws://localhost:8090?token=');
 
 
 export const SYSTEM_LOGO =
