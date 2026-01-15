@@ -544,17 +544,11 @@ const Index: React.FC = () => {
                       <Card
                         title={
                           <div style={{ display: 'flex', alignItems: 'center' }}>
-                            {item.iconUrl?.startsWith('http') ? (
-                              <Image
-                                src={item.iconUrl}
-                                preview={false}
-                                style={{ width: 20, height: 20, marginRight: 8 }}
-                              />
-                            ) : (
-                              <span style={{ fontSize: '20px', marginRight: 8 }}>
-                                {item.iconUrl}
-                              </span>
-                            )}
+                            <Image
+                              src={item.iconUrl || 'https://via.placeholder.com/20'}
+                              preview={false}
+                              style={{ width: 20, height: 20, marginRight: 8 }}
+                            />
                             <Typography.Text
                               style={{ fontSize: '14px', color: '#495060', fontWeight: 400 }}
                             >
